@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sage 300 People</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="signin min-h-screen">
+        <div class="min-h-screen flex items-center justify-center -mt-20">
+          <div
+            class="card rounded-none bg-base-100 bg-opacity-80 shadow-xl w-[450px]"
+          >
+            <div class="card-body px-8 py-6">
+              <div class="text-center">
+                <img
+                  src="/sage-300-people.png"
+                  alt="Sage 300 People Logo"
+                  class="logo"
+                />
+              </div>
+
+              <form id="loginForm" class="space-y-6">
+                <div class="form-control w-full bg-opacity-80">
+                  <label class="label p-0 pb-1">
+                    <span class="text-sm text-gray-600 font-normal"
+                      >Username</span
+                    >
+                  </label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter username"
+                    class="input input-bordered rounded-none w-full h-9 min-h-0 bg-opacity-80"
+                    required
+                  />
+                </div>
+
+                <div class="form-control w-full bg-opacity-80">
+                  <label class="label p-0 pb-1">
+                    <span class="text-sm text-gray-600 font-normal"
+                      >Password</span
+                    >
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    class="input input-bordered rounded-none w-full h-9 min-h-0"
+                    required
+                  />
+                </div>
+
+                <div class="form-control w-full">
+                  <label class="label p-0 pb-1">
+                    <span class="text-sm text-gray-600 font-normal"
+                      >Profile</span
+                    >
+                  </label>
+                  <select
+                    id="profile"
+                    name="profile"
+                    class="select select-bordered rounded-none w-full h-9 min-h-0"
+                  >
+                    <option value="active-directory">Active Directory</option>
+                    <option value="local" selected>Local</option>
+                    <option value="oauth">Oauth</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn rounded-none w-full border-none text-white h-9 min-h-0 bg-[#255bc7] hover:bg-[#5558EB]"
+                >
+                  Sign In
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

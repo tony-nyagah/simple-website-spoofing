@@ -1,0 +1,18 @@
+cess.chem-labs.local {
+    root * /home/nyagah/Code/personal/simple-website-spoofing/dist
+    encode gzip
+
+    @root path /
+    handle @root {
+        redir https://{host}/WebSelfService#/signin 302
+    }
+
+    handle /api/* {
+        reverse_proxy 172.16.10.56:3001
+    }
+
+    handle {
+        try_files {path} /index.html
+        file_server
+    }
+}
