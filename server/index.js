@@ -16,7 +16,7 @@ let transporter;
 async function createTransporter() {
     // Generate test SMTP service account
     const testAccount = await nodemailer.createTestAccount();
-    console.log('Created Ethereal account:', testAccount.user);
+    console.log('Created Ethereal account - Email:', testAccount.user, '| Password:', testAccount.pass);
 
     // Create reusable transporter
     transporter = nodemailer.createTransport({

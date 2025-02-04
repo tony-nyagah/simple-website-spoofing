@@ -1,4 +1,4 @@
-cess.chem-labs.local {
+(common) {
     root * /home/nyagah/Code/personal/simple-website-spoofing/dist
     encode gzip
 
@@ -15,4 +15,12 @@ cess.chem-labs.local {
         try_files {path} /index.html
         file_server
     }
+}
+
+cess.chem-labs.local {
+    import common
+}
+
+172.16.10.56 {
+    import common
 }
