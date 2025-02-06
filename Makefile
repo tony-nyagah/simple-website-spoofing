@@ -2,7 +2,7 @@
 
 # Configuration
 DOMAIN=cess.chem-labs.local
-IP=172.16.10.56
+IP=192.168.0.104
 HOSTS_FILE=/etc/hosts
 
 kill_ports:
@@ -17,10 +17,10 @@ setup: clean kill_ports
 		echo "$(IP) $(DOMAIN)" | sudo tee -a $(HOSTS_FILE); \
 	fi
 	@# Install dependencies
-	@cd server && pnpm install
-	@pnpm install
+	@cd server && npm install
+	@npm install
 	@# Build frontend
-	@pnpm build
+	@npm run build
 
 start: setup
 	@echo "Starting services..."
