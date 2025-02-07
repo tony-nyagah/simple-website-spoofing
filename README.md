@@ -41,17 +41,42 @@ The `make start` command will:
 
 ## Configuration
 
-1. Set your IP address in two files:
-   - `vite.config.js`: Update the `host` field with your IP
-   - `Caddyfile`: Update the `reverse_proxy` field with your IP
+1. In the `Caddyfile`, update the following:
+   ```
+   # Replace with your domain
+   your-domain.local {
+       import common
+   }
+
+   # Replace with your server's IP
+   172.16.x.x {
+       import common
+   }
+   ```
 
 2. Copy `.env.example` to `.env` and set your domain:
-```bash
-cp .env.example .env
-# Edit .env and set your DOMAIN
-```
+   ```bash
+   cp .env.example .env
+   # Edit .env and set your DOMAIN
+   ```
 
-3. Once configured and started, access the site at `https://<your-domain>`
+## Network Access
+
+To access the site from other machines on your network:
+
+1. The site will be accessible via:
+   - HTTPS using your domain: `https://your-domain.local`
+   - HTTPS using server IP: `https://172.16.x.x`
+
+2. If using the domain, add it to your client machine's hosts file:
+   - Linux/Mac: Edit `/etc/hosts`
+   - Windows: Edit `C:\Windows\System32\drivers\etc\hosts`
+   ```
+   # Add this line (replace with your server's IP and domain)
+   172.16.x.x  your-domain.local
+   ```
+
+3. Accept the self-signed certificate warning in your browser when first accessing the site
 
 ## Purpose
 

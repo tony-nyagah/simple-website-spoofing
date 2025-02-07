@@ -8,7 +8,7 @@
     }
 
     handle /api/* {
-        reverse_proxy 172.16.10.56:3001
+        reverse_proxy localhost:3001  # Use localhost since it's on the same machine
     }
 
     handle {
@@ -17,10 +17,12 @@
     }
 }
 
+# Your domain
 cess.chem-labs.local {
     import common
 }
 
-172.16.10.56 {
+# Allow IP access
+172.16.10.56 {  # Your server's IP
     import common
 }

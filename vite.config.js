@@ -1,6 +1,6 @@
 export default {
   server: {
-    host: '172.16.10.56',
+    host: '0.0.0.0',
     port: 3000
   },
   build: {
