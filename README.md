@@ -41,15 +41,14 @@ The `make start` command will:
 
 ## Configuration
 
-1. Copy `.env.example` to `.env`:
+1. Set your IP address in two files:
+   - `vite.config.js`: Update the `host` field with your IP
+   - `Caddyfile`: Update the `reverse_proxy` field with your IP
+
+2. Copy `.env.example` to `.env` and set your domain:
 ```bash
 cp .env.example .env
-```
-
-2. Edit `.env` and set your target domain:
-```bash
-# Example .env configuration
-DOMAIN=your-target-domain.local  # e.g., example.local
+# Edit .env and set your DOMAIN
 ```
 
 3. Once configured and started, access the site at `https://<your-domain>`
