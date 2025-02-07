@@ -19,6 +19,12 @@ dist-ssr
 .DS_Store
 *.suo
 *.ntvs*
+
+# Environment variables
+.env
 *.njsproj
 *.sln
 *.sw?
+
+# Caddy files
+caddy.pid

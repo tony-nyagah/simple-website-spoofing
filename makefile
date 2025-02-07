@@ -1,9 +1,27 @@
-.PHONY: setup start stop clean kill_ports
+.PHONY: help
 
 # Configuration
-DOMAIN=cess.chem-labs.local
-IP=192.168.0.104
+-include .env
+export
+
+# Get the users IP address and use it to configure the Caddy server
+IP=$(shell ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v '127.0.0.1' | head -n 1)
 HOSTS_FILE=/etc/hosts
+
+# Help text
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@echo "  setup      - Set up the environment"
+	@echo "  start      - Start the services"
+	@echo "  stop       - Stop the services"
+	@echo "  clean      - Clean up the environment"
+	@echo "  kill_ports - Kill processes on ports 3000 and 3001"
+	@echo "  help       - Show this help message"
+	@echo ""
+	@echo "Type 'make <target>' to run a target"
+
 
 kill_ports:
 	@echo "Killing processes on ports 3000 and 3001..."
@@ -12,6 +30,10 @@ kill_ports:
 
 setup: clean kill_ports
 	@echo "Setting up the environment..."
+	@# Create .env file if it doesn't exist
+	@if [ ! -f .env ]; then \
+		cp .env.example .env; \
+	fi
 	@# Check if domain is already in hosts file
 	@if ! grep -q "$(IP) $(DOMAIN)" $(HOSTS_FILE); then \
 		echo "$(IP) $(DOMAIN)" | sudo tee -a $(HOSTS_FILE); \
