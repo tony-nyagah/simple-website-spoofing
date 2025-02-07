@@ -46,7 +46,7 @@ npm -v   # Should show 10.9.2
 
 ### 2. Install Caddy Web Server
 
-Caddy is our reverse proxy server. Install it using these commands:
+[Caddy](https://caddyserver.com/docs/install#debian-ubuntu-raspbian) is our reverse proxy server. Install it using these commands:
 
 ```bash
 # Install required packages
