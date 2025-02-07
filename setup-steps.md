@@ -2,6 +2,20 @@
 
 This guide will help you set up a local development environment for the website spoofing project. Please follow these steps carefully.
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+  - [1. Install Node.js via NVM](#1-install-nodejs-via-nvm)
+  - [2. Install Caddy Web Server](#2-install-caddy-web-server)
+  - [3. Configure Project Settings](#3-configure-project-settings)
+    - [3.1 Get Your Local IP Address](#31-get-your-local-ip-address)
+    - [3.2 Configure Caddyfile](#32-configure-caddyfile)
+    - [3.3 Domain Configuration](#33-domain-configuration)
+  - [4. Start the Application](#4-start-the-application)
+- [Verification](#verification)
+- [Troubleshooting](#troubleshooting)
+- [Notes](#notes)
+
 ## Prerequisites
 
 - Ubuntu/Debian-based Linux system

@@ -4,6 +4,18 @@
 
 This project demonstrates website spoofing techniques to raise awareness about cybersecurity risks and promote better security practices. It is intended strictly for educational purposes in controlled environments.
 
+## Table of Contents
+- [Quick Links](#quick-links)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Available Commands](#available-commands)
+- [Accessing the Site](#accessing-the-site)
+- [Technical Stack](#technical-stack)
+- [Security Notice](#security-notice)
+- [Ethical Guidelines](#ethical-guidelines)
+- [Legal Disclaimer](#legal-disclaimer)
+- [License](#license)
+
 ## Quick Links
 - [Detailed Setup Guide](setup-steps.md)
 - [Technical Documentation](docs/)
