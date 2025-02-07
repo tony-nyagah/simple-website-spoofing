@@ -4,7 +4,7 @@
 
     @root path /
     handle @root {
-        redir https://{host}/WebSelfService#/signin 302
+        redir http://{host}/WebSelfService#/signin 302
     }
 
     handle /api/* {
@@ -23,6 +23,6 @@ cess.chem-labs.local {
 }
 
 # Allow IP access
-172.16.10.56 {  # Your server's IP
+192.168.0.104 {  # Your server's IP
     import common
 }

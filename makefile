@@ -1,11 +1,14 @@
 .PHONY: help
 
 # Configuration
--include .env
-export
+# -include .env
+# export
 
 # Get the users IP address and use it to configure the Caddy server
 IP=$(shell ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v '127.0.0.1' | head -n 1)
+DOMAIN=cess.chem-labs.local
+NODE_PORT=3000
+CADDY_PORT=3001
 HOSTS_FILE=/etc/hosts
 
 # Help text
@@ -30,10 +33,6 @@ kill_ports:
 
 setup: clean kill_ports
 	@echo "Setting up the environment..."
-	@# Create .env file if it doesn't exist
-	@if [ ! -f .env ]; then \
-		cp .env.example .env; \
-	fi
 	@# Check if domain is already in hosts file
 	@if ! grep -q "$(IP) $(DOMAIN)" $(HOSTS_FILE); then \
 		echo "$(IP) $(DOMAIN)" | sudo tee -a $(HOSTS_FILE); \
