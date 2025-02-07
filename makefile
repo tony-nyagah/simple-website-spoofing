@@ -24,9 +24,9 @@ help:
 
 
 kill_ports:
-	@echo "Killing processes on ports 3000 and 3001..."
-	@-sudo lsof -ti:3000 | xargs -r sudo kill -9
-	@-sudo lsof -ti:3001 | xargs -r sudo kill -9
+	@echo "Killing processes on ports $(NODE_PORT) and $(CADDY_PORT)..."
+	@-sudo lsof -ti:$(NODE_PORT) | xargs -r sudo kill -9
+	@-sudo lsof -ti:$(CADDY_PORT) | xargs -r sudo kill -9
 
 setup: clean kill_ports
 	@echo "Setting up the environment..."

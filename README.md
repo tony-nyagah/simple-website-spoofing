@@ -41,24 +41,25 @@ The `make start` command will:
 
 ## Configuration
 
-1. In the `Caddyfile`, update the following:
-   ```
-   # Replace with your domain
-   your-domain.local {
-       import common
-   }
-
-   # Replace with your server's IP
-   172.16.x.x {
-       import common
-   }
-   ```
-
-2. Copy `.env.example` to `.env` and set your domain:
+1. Copy `.env.example` to `.env`:
    ```bash
    cp .env.example .env
-   # Edit .env and set your DOMAIN
    ```
+
+2. Configure your `.env` file:
+   ```bash
+   # Domain configuration
+   DOMAIN=your-domain.local  # e.g., cess.chem-labs.local
+
+   # Server configuration
+   NODE_PORT=3000
+   CADDY_PORT=3001
+   ```
+
+3. The makefile will automatically:
+   - Configure Caddy with your domain
+   - Start the Node.js server on the specified port
+   - Set up HTTPS with Caddy
 
 ## Network Access
 
